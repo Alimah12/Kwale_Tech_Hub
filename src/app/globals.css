@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom theme CSS variables for winter theme - Brand Colors from Kwale Tech Hub Logo */
+:root {
+  /* Base colors - Clean whites and light grays */
+  --color-base-100: oklch(99% 0 0);
+  --color-base-200: oklch(96% 0.006 220);
+  --color-base-300: oklch(91% 0.012 220);
+  --color-base-content: oklch(25% 0.015 220);
+  
+  /* Brand Primary - Deep Blue from logo */
+  --color-primary: oklch(0.55 0.18 230);
+  --color-primary-content: oklch(98% 0.01 230);
+  
+  /* Brand Secondary - Golden Yellow from logo */
+  --color-secondary: oklch(0.78 0.15 85);
+  --color-secondary-content: oklch(20% 0.02 85);
+  
+  /* Brand Accent - Vibrant Orange/Red from logo */
+  --color-accent: oklch(0.65 0.22 25);
+  --color-accent-content: oklch(95% 0.02 25);
+  
+  /* Supporting colors */
+  --color-neutral: oklch(0.32 0.02 220);
+  --color-neutral-content: oklch(85% 0.01 220);
+  --color-info: oklch(0.65 0.15 250);
+  --color-info-content: oklch(15% 0.02 250);
+  --color-success: oklch(0.70 0.18 155);
+  --color-success-content: oklch(15% 0.02 155);
+  --color-warning: oklch(0.80 0.16 75);
+  --color-warning-content: oklch(20% 0.02 75);
+  --color-error: oklch(0.65 0.20 15);
+  --color-error-content: oklch(95% 0.02 15);
+  
+  /* Design tokens */
+  --radius-selector: 1.2rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1.2rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 2px;
+  --noise: 0;
+}
+ 
+/* Custom theme CSS variables for sunset theme - Brand Colors Adapted for Dark Mode */
+[data-theme="sunset"] {
+  /* Base colors - Dark backgrounds with blue tint */
+  --color-base-100: oklch(18% 0.015 235);
+  --color-base-200: oklch(15% 0.018 235);
+  --color-base-300: oklch(12% 0.020 235);
+  --color-base-content: oklch(88% 0.008 235);
+  
+  /* Brand Primary - Bright Blue for dark mode */
+  --color-primary: oklch(0.70 0.20 230);
+  --color-primary-content: oklch(15% 0.02 230);
+  
+  /* Brand Secondary - Bright Golden Yellow */
+  --color-secondary: oklch(0.85 0.18 85);
+  --color-secondary-content: oklch(18% 0.02 85);
+  
+  /* Brand Accent - Vibrant Orange */
+  --color-accent: oklch(0.75 0.25 25);
+  --color-accent-content: oklch(15% 0.02 25);
+  
+  /* Supporting colors for dark mode */
+  --color-neutral: oklch(0.35 0.02 235);
+  --color-neutral-content: oklch(85% 0.01 235);
+  --color-info: oklch(0.75 0.18 250);
+  --color-info-content: oklch(15% 0.02 250);
+  --color-success: oklch(0.80 0.20 155);
+  --color-success-content: oklch(15% 0.02 155);
+  --color-warning: oklch(0.85 0.18 75);
+  --color-warning-content: oklch(18% 0.02 75);
+  --color-error: oklch(0.75 0.22 15);
+  --color-error-content: oklch(15% 0.02 15);
+  
+  /* Design tokens */
+  --radius-selector: 1.2rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1.2rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 3px;
+  --noise: 0;
+} 
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+
+  /* Global button styling for rounded corners */
+  .btn,
+  .ui\:btn {
+    border-radius: 0.5rem; /* lg rounded corners */
+  }
+}
+
+/* ========================================================================
+   Component: ButtonGroup
+   ======================================================================== */
+
+/* Base container for the button group */
+.ui\:btn-group,
+.ui\:btn-group-horizontal {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.ui\:btn-group-vertical {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+/* Remove the border radius from adjacent buttons to make them "stick" together.
+  The :not(:first-child) and :not(:last-child) selectors ensure that the
+  first and last buttons in the group keep their rounded corners on the outside.
+*/
+
+/* Horizontal Group Styling */
+.ui\:btn-group-horizontal > .ui\:btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: -1px; /* Overlap borders */
+}
+
+.ui\:btn-group-horizontal > .ui\:btn:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Vertical Group Styling */
+.ui\:btn-group-vertical > .ui\:btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: -1px; /* Overlap borders */
+}
+
+.ui\:btn-group-vertical > .ui\:btn:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* ========================================================================
+   Effect: Ripple
+   ======================================================================== */
+
+.ui\:btn {
+  /* These are already in your button styles but are essential for the ripple */
+  position: relative;
+  overflow: hidden;
+}
+
+.ui\:ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.2;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ========================================================================
+   Toast Animations
+   ======================================================================== */
+
+@keyframes toast-enter {
+  0% {
+    transform: translate3d(100%, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-leave {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(100%, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+}
+
+.animate-enter {
+  animation: toast-enter 0.35s cubic-bezier(.21,1.02,.73,1) forwards;
+}
+
+.animate-leave {
+  animation: toast-leave 0.4s forwards cubic-bezier(.06,.71,.55,1);
+}
+
+/* Toast container styling */
+.toast-container {
+  z-index: 9999;
+}

@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[2971,["/_next/static/chunks/8877fb46725c5390.js","/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/01d52bfb000ba5d3.js"],"default"]
+3:I[53352,["/_next/static/chunks/8877fb46725c5390.js","/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/01d52bfb000ba5d3.js"],"default"]
+4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"buildId":"D7TNzwH9MEi4u8j_x7Rk6","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen bg-base-100","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","section",null,{"className":"py-20 bg-base-200","children":["$","div",null,{"className":"container mx-auto px-6","children":["$","div",null,{"className":"text-center","children":[["$","h2",null,{"className":"text-4xl font-bold text-base-content mb-8","children":"Empowering Kwale Through Technology"}],["$","p",null,{"className":"text-xl text-base-content/80 max-w-3xl mx-auto","children":"Join us in building a digital future for Kwale County through innovative programs, cutting-edge technology solutions, and comprehensive digital education."}]]}]}]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/ff1a16fafef87110.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/01d52bfb000ba5d3.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+6:null
